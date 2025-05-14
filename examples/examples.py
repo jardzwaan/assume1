@@ -15,7 +15,7 @@ log = logging.getLogger(__name__)
 # "" means no CSV files will be stored
 csv_path = ""
 
-os.makedirs("./examples/local_db", exist_ok=True)
+#os.makedirs(csv_path, exist_ok=True)
 
 available_examples = {
     # small examples for easier understanding of different features and configurations
@@ -113,15 +113,15 @@ if __name__ == "__main__":
 
     # select to store the simulation results in a local database or in timescale
     # when using timescale, you need to have docker installed and can access the grafana dashboard
-    data_format = "local_db"  # "local_db" or "timescale"
+    data_format = "timescale"  # "local_db" or "timescale"
 
     # select the example to run from the available examples above
-    example = "small_with_vre_and_storage"
+    example = "small_with_redispatch"
 
     if data_format == "local_db":
         db_uri = "sqlite:///./examples/local_db/assume_db.db"
     elif data_format == "timescale":
-        db_uri = "postgresql://assume:assume@localhost:5432/assume"
+        db_uri = "postgresql://assume:assume@localhost:5434/assume"
 
     # create world
     world = World(database_uri=db_uri, export_csv_path=csv_path)
@@ -129,7 +129,7 @@ if __name__ == "__main__":
     # load scenario
     load_scenario_folder(
         world,
-        inputs_path="examples/inputs",
+        inputs_path="/Users/jardzwaan/Documents/Thesis/Thesis/assume/examples/inputs",
         scenario=available_examples[example]["scenario"],
         study_case=available_examples[example]["study_case"],
     )

@@ -1,0 +1,6 @@
+,technology,unit_operator,node,max_power,min_power,simulation
+demand_north_1,inflex_demand,eom_de,north_1,0,-1e+05,example_01d_base
+demand_north_2,inflex_demand,eom_de,north_2,0,-1e+05,example_01d_base
+demand_east,inflex_demand,eom_de,east,0,-1e+05,example_01d_base
+demand_south,inflex_demand,eom_de,south,0,-1e+05,example_01d_base
+demand_west,inflex_demand,eom_de,west,0,-1e+05,example_01d_base
